@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.get("/")
 def receive():
     # image_url = "http://127.0.0.1:5001/"
-    image_url = "https://web-service-1.herokuapp.com/"
+    image_url = "https://getimages-web-service.herokuapp.com/"
     response = requests.get(image_url)
     img = response.content
     
