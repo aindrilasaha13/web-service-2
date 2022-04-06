@@ -14,8 +14,8 @@ def home():
 @app.post("/calculate")
 def calculate():
     value = request.form.get("N")
-    image_url = "http://127.0.0.1:5001/"
-    # image_url= "https://getimages-web-service.herokuapp.com/"
+    # image_url = "http://127.0.0.1:5001/"
+    image_url= "https://getimages-web-service.herokuapp.com/"
     response = requests.get(url = image_url, params={"N":value})
     img = response.content
     buffered = io.BytesIO(img)
@@ -23,4 +23,5 @@ def calculate():
     return render_template("display.html",images={ 'image': img_url })
 
 if __name__ == "__main__":
-    app.run(debug=True,port=5002)
+    app.run(debug=True)
+    # app.run(debug=True,port=5002)
